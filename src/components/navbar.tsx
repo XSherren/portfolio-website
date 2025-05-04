@@ -47,17 +47,12 @@ function Navbar() {
             </li>
             <li>
               <a href="#" className="block px-3 py-2 text-white md:p-0">
-                SKILLS
+                PROJECTS
               </a>
             </li>
             <li>
               <a href="#" className="block px-3 py-2 text-white md:p-0">
                 WORK
-              </a>
-            </li>
-            <li>
-              <a href="#" className="block px-3 py-2 text-white md:p-0">
-                PROJECT
               </a>
             </li>
             <li>
