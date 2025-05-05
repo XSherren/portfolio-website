@@ -13,9 +13,9 @@ function About() {
         />
 
         <div>
-          <h2 className="mb-2 text-5xl font-bold">About Me</h2>
+          <h2 className="title">About Me</h2>
           <h4 className="mb-4">The human behind the screen.</h4>
-          <div className="grid grid-cols-3 gap-5">
+          <div className="grid grid-cols-3 gap-5 font-(family-name:--font-inconsolata) text-[16px]">
             <div className="rounded-lg border border-[#fff]/15 bg-[#3D1B67]/55 p-5 backdrop-blur-md">
               <span className="ml-2 inline-flex items-center justify-between text-white">
                 <Image src="/Girl.svg" alt="Girl icon" width={20} height={20} />
@@ -53,7 +53,7 @@ function About() {
               </div>
             </div>
             <div className="col-span-3 rounded-lg border border-[#fff]/15 bg-[#3D1B67]/55 p-5 backdrop-blur-md">
-              <p>Education</p>
+              <p className="text-[20px]">Education</p>
               <p>Diploma in Infocomm Technology</p>
               <p>June, 2022 - Dec, 2023</p>
               <p>PSB Academy, Singapore</p>
