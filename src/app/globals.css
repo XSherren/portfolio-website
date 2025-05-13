@@ -39,3 +39,12 @@ body {
     @apply text-xl font-(family-name:--font-poppins);
   }
 }
+
+/* In your global CSS file (e.g., app/globals.css) */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera */
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* For Internet Explorer and Edge */
+  scrollbar-width: none;  /* For Firefox */
+}
