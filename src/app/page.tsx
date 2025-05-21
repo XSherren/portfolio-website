@@ -3,11 +3,13 @@ import { Hero } from "@/components/hero";
 import { Projects } from "@/components/projects";
 import { About } from "@/components/about";
 import { WorkExperiences } from "@/components/work-experiences";
+import { Header } from "@/components/header";
 
 export default function Home() {
   return (
     <>
       <main>
+        <Header />
         <Hero />
         <About />
         <Projects />
