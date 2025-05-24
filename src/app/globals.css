@@ -19,6 +19,13 @@
   --font-mono: var(--font-geist-mono);
 }
 
+@theme {
+  --breakpoint-*: initial;
+  --breakpoint-sm: 40rem;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 60rem;
+  --breakpoint-xl: 75rem;
+}
 
 @media (prefers-color-scheme: dark) {
   :root {

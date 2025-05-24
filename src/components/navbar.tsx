@@ -1,16 +1,17 @@
 function Navbar() {
   return (
     <nav>
-      <div className="mx-auto flex flex-wrap items-center justify-between p-4 lg:max-w-screen-lg">
+      {/* Logo */}
+      <div className="flex items-center justify-between">
         <a href="#" className="flex items-center space-x-3 rtl:space-x-reverse">
-          <span className="mt-7 self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+          <span className="self-center text-2xl font-semibold whitespace-nowrap">
             Logo
           </span>
         </a>
         <button
           data-collapse-toggle="navbar-default"
           type="button"
-          className="inline-flex h-10 w-10 items-center justify-center rounded-lg p-2 text-sm text-gray-500 focus:ring-2 focus:ring-gray-200 focus:outline-none md:hidden dark:text-gray-400 dark:focus:ring-gray-600"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-lg p-2 text-sm text-gray-500 focus:ring-2 focus:ring-gray-200 focus:outline-none lg:hidden dark:text-gray-400 dark:focus:ring-gray-600"
           aria-controls="navbar-default"
           aria-expanded="false"
         >
@@ -31,8 +32,8 @@ function Navbar() {
             />
           </svg>
         </button>
-        <div className="hidden w-full md:block md:w-auto" id="navbar-default">
-          <ul className="mt-7 flex flex-col rounded-lg border border-gray-100 p-4 font-medium md:flex-row md:space-x-20 md:border-0 md:p-0 rtl:space-x-reverse dark:border-gray-700">
+        <div className="hidden w-full lg:block lg:w-auto" id="navbar-default">
+          <ul className="flex flex-col border border-gray-100 p-4 font-medium lg:flex-row lg:space-x-20 lg:border-0 lg:p-0 rtl:space-x-reverse">
             <li>
               <a
                 href="#"
@@ -49,7 +50,7 @@ function Navbar() {
             </li>
             <li>
               <a href="#" className="block px-3 py-2 text-white md:p-0">
-                WORK
+                EXPERIENCES
               </a>
             </li>
             <li>
