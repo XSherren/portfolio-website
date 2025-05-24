@@ -4,15 +4,16 @@ function Hero() {
   return (
     <>
       <section>
-        <div className="container mx-auto flex flex-col-reverse px-4 py-8 sm:px-6 sm:py-10 lg:flex-row lg:gap-6 lg:px-8 lg:py-20">
+        <div className="container mx-auto flex flex-col-reverse px-4 py-8 sm:px-6 sm:py-10 lg:flex-row lg:gap-6 lg:px-4">
+          {/* Hero Content */}
           <div className="mx-auto place-self-center lg:w-1/2 lg:justify-items-end">
-            <div className="lg:w-[500px]">
-              <h1 className="mx-auto mb-4 text-center font-bold tracking-tight lg:text-left lg:leading-12 dark:text-white">
-                <span className="title-outfit text-[25pt] lg:text-5xl">
+            <div>
+              <h1 className="mx-auto mb-4 text-center leading-8 font-bold tracking-tight sm:leading-12 lg:text-left dark:text-white">
+                <span className="title-outfit text-[25pt] sm:text-5xl lg:text-5xl xl:text-6xl">
                   Hey! I&apos;m Sherren.
                 </span>
                 <br />
-                <span className="text-[23pt] lg:text-[28pt]">
+                <span className="text-[23pt] sm:text-4xl lg:text-4xl xl:text-5xl">
                   A Software Developer.
                 </span>
               </h1>
@@ -23,25 +24,27 @@ function Hero() {
               </p>
               <a
                 href="#"
-                className="mx-auto mb-[15px] inline-flex w-full items-center justify-center rounded-full border border-[#8F63C5] bg-[#8F63C5] px-5 py-3 text-center text-base font-medium text-white hover:border-[#572594] hover:bg-[#572594] lg:mr-4 lg:w-50"
+                className="mx-auto mb-[15px] inline-flex w-full items-center justify-center rounded-full border bg-linear-to-br from-[#E7DAFF] to-[#B494EF] px-5 py-3 text-center text-base font-semibold text-[#2C1746] hover:border hover:bg-linear-to-br hover:from-[#CFB5FF] hover:to-[#655BD6] lg:mr-4 lg:mb-0 lg:w-50"
               >
                 CONTACT ME
               </a>
               <a
                 href="#"
-                className="inline-flex w-full items-center justify-center rounded-full border border-gray-300 px-5 py-3 text-center text-base font-medium text-white lg:w-50"
+                className="inline-flex w-full items-center justify-center rounded-full border border-gray-300 px-5 py-3 text-center text-base font-semibold text-white lg:w-50"
               >
                 DOWNLOAD CV
               </a>
             </div>
           </div>
-          <div className="mb-[40px] lg:mt-0 lg:flex lg:w-1/2 lg:justify-items-start xl:mb-0">
+
+          {/* Hero Image */}
+          <div className="mb-[40px] lg:mt-0 lg:flex lg:w-1/2 xl:mb-0">
             <Image
-              src="/hero-image.svg"
+              src="/Hero-image.svg"
               alt="Hero Image"
               width={0}
               height={0}
-              className="mx-auto h-70 w-70 rounded-full shadow-[2px_2px_40px_#C08DFF] sm:h-100 sm:w-100 lg:ml-6 lg:h-[450px] lg:w-[450px]"
+              className="mx-auto h-70 w-70 sm:h-100 sm:w-100 lg:h-[500px] lg:w-[500px]"
             />
           </div>
         </div>
