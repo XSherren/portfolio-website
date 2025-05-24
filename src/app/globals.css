@@ -8,7 +8,7 @@
   --background: #2c1746;
   --foreground: #ffffff;
   --font-poppins: "Poppins", sans-serif;
-  --font-inconsolata: "Inconsolata", sans-serif;
+  --font-inconsolata: "Inconsolata", monospace;
   --font-outfit: "Outfit", sans-serif;
 }
 
@@ -46,11 +46,15 @@ body {
   }
 
   h2.title {
-    @apply text-5xl font-bold mb-2 font-(family-name:--font-poppins);
+    @apply font-(family-name:--font-poppins);
   }
 
   h5.title {
-    @apply text-xl font-(family-name:--font-poppins);
+    @apply font-(family-name:--font-poppins);
+  }
+
+  .font-inconsolata {
+    @apply font-(family-name:--font-inconsolata);
   }
 }
 
