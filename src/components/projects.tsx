@@ -159,7 +159,7 @@ function Projects() {
       // The width should be the actual rendered width of the element including its own padding/border
       // but not its external margins for slot calculation if using gap.
       // If using margins for spacing (like mx-2 on article), include them in slot width.
-      let calculatedSlotWidth =
+      const calculatedSlotWidth =
         articlesElements[0].offsetWidth + marginLeft + marginRight;
 
       if (calculatedSlotWidth > 0) {
