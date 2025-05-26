@@ -109,7 +109,7 @@ function About() {
 
                   <div className="pl-9">
                     <p className="mb-2">Front-End</p>
-                    <div className="mb-4 flex flex-row">
+                    <div className="mb-4 flex flex-row overflow-x-auto">
                       <BoxIcon
                         width={25}
                         height={25}
@@ -149,7 +149,7 @@ function About() {
                     </div>
 
                     <p className="mb-2">Back-End</p>
-                    <div className="mb-4 flex flex-row gap-0">
+                    <div className="mb-4 flex flex-row gap-0 overflow-x-auto">
                       <BoxIcon
                         src="/python.svg"
                         alt="Python icon"
@@ -180,7 +180,7 @@ function About() {
                     </div>
 
                     <p className="mb-2">Design</p>
-                    <div className="mb-4 flex flex-row gap-0">
+                    <div className="mb-4 flex flex-row gap-0 overflow-x-auto">
                       <BoxIcon
                         src="/Figma.svg"
                         alt="Figma icon"
@@ -197,7 +197,7 @@ function About() {
                     </div>
 
                     <p className="mb-2">Tools & Platform</p>
-                    <div className="mb-4 flex flex-row gap-0">
+                    <div className="mb-4 flex flex-row gap-0 overflow-x-auto">
                       <BoxIcon
                         width={30}
                         height={30}
