@@ -1,9 +1,14 @@
+"use client";
+
+import { useState } from "react";
+import { ChevronDown, ChevronUp } from "lucide-react";
+
 interface Experience {
   id: string | number;
-  number: string;
-  dateRange: string;
   title: string;
-  description: string;
+  company: string;
+  dateRange: string;
+  responsibilities: string[];
 }
 
 interface WorkExperiencesProps {
@@ -11,62 +16,93 @@ interface WorkExperiencesProps {
 }
 
 const WorkExperiences = ({ experiences }: WorkExperiencesProps) => {
+  const [openAccordion, setOpenAccordion] = useState<string | number | null>(
+    experiences.length > 0 ? experiences[0].id : null,
+  );
+
+  const handleAccordionClick = (id: string | number) => {
+    setOpenAccordion(openAccordion === id ? null : id);
+  };
+
+  const cardBaseBg = "bg-[#3D1B67]/55";
+  const cardExpandedBg = "bg-[#3D1B67]";
+  const cardBaseBorder = "border-white/10";
+  const cardExpandedBorder = "border-white/20";
+
   return (
-    <section className={"px-4 py-16 font-sans sm:px-6 lg:px-8"}>
-      <div className="container mx-auto text-center">
-        <h2 className={"mb-3 text-4xl font-bold text-white md:text-5xl"}>
-          Work Experiences
-        </h2>
-        <p className={"mb-16 text-lg text-[#A099C2] md:mb-20 md:text-xl"}>
-          Lorem ipsum dolor sit amet consectetur
-        </p>
-
-        <div className="relative mx-auto w-full max-w-5xl">
-          <div
-            className={
-              "absolute top-8 right-0 left-0 z-0 h-0.5 bg-[#A099C2] md:top-10 md:h-1"
-            }
-            aria-hidden="true"
-          ></div>
-
-          <div className="relative grid grid-cols-1 gap-x-8 gap-y-16 md:grid-cols-3 md:gap-y-0">
+    <section
+      id="work-experiences"
+      className="container mx-auto px-4 py-16 text-white sm:px-6 lg:px-8"
+    >
+      <div className="container mx-auto">
+        <div className="flex flex-col gap-x-12 gap-y-10 lg:flex-row">
+          {/* Left Column: Open To Work, Title and Description */}
+          <div className="text-center lg:w-1/2 lg:content-center lg:text-left">
+            <div className="mb-4 inline-flex items-center rounded-full border border-transparent bg-[#3D1B67] px-4 py-0.5 lg:mb-6">
+              <span className="mr-2 h-2.5 w-2.5 rounded-full bg-green-500"></span>
+              <span className="text-sm font-medium text-[#F2F2F2]">
+                Open To Work
+              </span>
+            </div>
+            <h2 className="mb-4 text-4xl font-bold lg:mb-8 lg:text-5xl">
+              Work Experiences
+            </h2>
+            <p className="text-lg text-slate-300">
+              Detailing my career journey and the practical experience I&apos;ve
+              gained, showcasing my contributions and growth in various
+              professional environments.
+            </p>
+          </div>
+          {/* Right Column: Experience Cards (Accordion) */}
+          <div className="space-y-4 lg:w-1/2">
             {experiences.map((exp) => (
               <div
                 key={exp.id}
-                className="z-10 flex flex-col items-center text-center"
+                className={`rounded-lg border shadow-lg transition-all duration-600 ease-in-out focus-within:shadow-xl hover:border-[#6A6A82] hover:shadow-xl ${openAccordion === exp.id ? `${cardExpandedBg} ${cardExpandedBorder}` : `${cardBaseBg} ${cardBaseBorder}`} `}
               >
-                <div
-                  className={
-                    "mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-[#C7C2E8] shadow-lg md:mb-8 md:h-20 md:w-20"
-                  }
+                <button
+                  onClick={() => handleAccordionClick(exp.id)}
+                  className="flex w-full items-center justify-between p-6 text-left focus:outline-none"
+                  aria-expanded={openAccordion === exp.id}
+                  aria-controls={`accordion-content-${exp.id}`}
                 >
-                  <span
-                    className={"text-2xl font-bold text-[#2C204B] md:text-3xl"}
-                  >
-                    {exp.number}
-                  </span>
-                </div>
+                  <div className="flex-grow">
+                    <h3 className="text-xl font-bold text-white">
+                      {exp.title}
+                    </h3>
+                    <p className="text-sm text-[#C7C2E8]">{exp.company}</p>
+                  </div>
+                  <div className="ml-4 flex flex-col items-end">
+                    <p className="text-sm whitespace-nowrap text-[#A099C2]">
+                      {exp.dateRange}
+                    </p>
+                    {openAccordion === exp.id ? (
+                      <ChevronUp className="mt-1 h-5 w-5 text-[#A099C2] transition-transform duration-300" />
+                    ) : (
+                      <ChevronDown className="mt-1 h-5 w-5 text-[#A099C2] transition-transform duration-300" />
+                    )}
+                  </div>
+                </button>
 
-                <div className="mt-2">
-                  <p
-                    className={
-                      "mb-1.5 text-sm font-semibold text-white md:text-base"
-                    }
+                <div
+                  id={`accordion-content-${exp.id}`}
+                  className={`overflow-hidden transition-all duration-1200 ease-in-out ${openAccordion === exp.id ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0"} `}
+                >
+                  <div
+                    className={`px-6 pb-6 ${openAccordion === exp.id ? "pt-2" : "pt-0"}`}
                   >
-                    {exp.dateRange}
-                  </p>
-                  <h3
-                    className={"mb-2.5 text-lg font-bold text-white md:text-xl"}
-                  >
-                    {exp.title}
-                  </h3>
-                  <p
-                    className={
-                      "px-2 text-xs leading-relaxed text-[#A099C2] md:text-sm"
-                    }
-                  >
-                    {exp.description}
-                  </p>
+                    {exp.responsibilities && exp.responsibilities.length > 0 ? (
+                      <ul className="ml-5 list-disc space-y-2 text-sm text-[#EDE3FF]">
+                        {exp.responsibilities.map((responsibility, index) => (
+                          <li key={index}>{responsibility}</li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <p className="text-sm text-[#A099C2]">
+                        No specific details available for this role.
+                      </p>
+                    )}
+                  </div>
                 </div>
               </div>
             ))}
