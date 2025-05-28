@@ -9,7 +9,7 @@ function Hero() {
           <div className="mx-auto place-self-center lg:w-1/2">
             <div>
               <h1 className="mx-auto mb-4 text-center leading-8 font-bold tracking-tight sm:leading-12 lg:text-left dark:text-white">
-                <span className="title-outfit text-4xl sm:text-5xl lg:text-5xl xl:text-6xl">
+                <span className="font-outfit text-4xl sm:text-5xl lg:text-5xl xl:text-6xl">
                   Hey! I&apos;m Sherren.
                 </span>
                 <br />

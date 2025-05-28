@@ -1,15 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Inconsolata&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Outfit&display=swap");
 @import "tailwindcss";
 
 
 :root {
   --background: #2c1746;
   --foreground: #ffffff;
-  --font-poppins: "Poppins", sans-serif;
-  --font-inconsolata: "Inconsolata", monospace;
-  --font-outfit: "Outfit", sans-serif;
 }
 
 @theme inline {
@@ -41,20 +35,20 @@ body {
 }
 
 @layer components {
-  .title-outfit {
-    @apply font-(family-name:--font-outfit);
-  }
-
-  h2.title {
-    @apply font-(family-name:--font-poppins);
-  }
-
-  h5.title {
-    @apply font-(family-name:--font-poppins);
+  .font-outfit {
+    font-family: var(--font-outfit);
   }
 
   .font-inconsolata {
-    @apply font-(family-name:--font-inconsolata);
+    font-family: var(--font-inconsolata);
+  }
+
+  .font-alumni {
+    font-family: var(--font-alumni);
+  }
+
+  .font-silkscreen {
+    font-family: var(--font-silkscreen);
   }
 }
 

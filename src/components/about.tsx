@@ -21,7 +21,7 @@ function About() {
           <div className="flex w-full flex-col gap-6 lg:w-1/2">
             {/* Headline */}
             <div className="text-center lg:text-left">
-              <h2 className="title mb-2 text-5xl font-bold">About Me</h2>
+              <h2 className="mb-2 text-5xl font-bold">About Me</h2>
               <h5 className="mb-4 text-xl">The human behind the screen.</h5>
             </div>
 
