@@ -266,7 +266,7 @@ function Projects() {
   const disableControls = originalProjectsCount <= NUM_ARTICLES_TO_CLONE;
 
   return (
-    <main className="overflow-hidden py-12 text-white md:py-20">
+    <main id="projects" className="overflow-hidden py-12 text-white md:py-20">
       <div className="container mx-auto px-4">
         <div className="mb-10 text-center md:mb-16">
           <h2 className="text-4xl font-bold sm:text-5xl">Projects</h2>

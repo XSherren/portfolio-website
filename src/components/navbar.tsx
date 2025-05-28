@@ -36,7 +36,7 @@ function Navbar() {
           <ul className="flex flex-col border border-gray-100 p-4 font-medium lg:flex-row lg:space-x-20 lg:border-0 lg:p-0 rtl:space-x-reverse">
             <li>
               <a
-                href="#"
+                href="#about"
                 className="block px-3 py-2 text-white md:p-0"
                 aria-current="page"
               >
@@ -44,18 +44,21 @@ function Navbar() {
               </a>
             </li>
             <li>
-              <a href="#" className="block px-3 py-2 text-white md:p-0">
+              <a href="#projects" className="block px-3 py-2 text-white md:p-0">
                 PROJECTS
               </a>
             </li>
             <li>
-              <a href="#" className="block px-3 py-2 text-white md:p-0">
+              <a
+                href="#experiences"
+                className="block px-3 py-2 text-white md:p-0"
+              >
                 EXPERIENCES
               </a>
             </li>
             <li>
               <a
-                href="#"
+                href="#contact"
                 className="block rounded-sm px-3 py-2 text-white md:p-0"
               >
                 CONTACT

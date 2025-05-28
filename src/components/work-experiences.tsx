@@ -31,7 +31,7 @@ const WorkExperiences = ({ experiences }: WorkExperiencesProps) => {
 
   return (
     <section
-      id="work-experiences"
+      id="experiences"
       className="container mx-auto px-4 py-16 text-white sm:px-6 lg:px-8"
     >
       <div className="container mx-auto">

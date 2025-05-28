@@ -4,7 +4,7 @@ import { BoxIcon } from "./ui/box-icon";
 function About() {
   return (
     <>
-      <section>
+      <section id="about">
         <div className="container mx-auto flex flex-col gap-4 px-6 py-8 sm:py-10 lg:flex-row lg:items-start lg:gap-8 lg:px-4 xl:gap-16">
           {/* About Image */}
           <div className="lg:sticky lg:top-10 lg:w-1/2 lg:pt-26">

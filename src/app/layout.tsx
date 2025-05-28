@@ -52,7 +52,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${poppins.variable} ${inconsolata.variable} ${outfit.variable} ${alumniSansCollegiateOne.variable} ${silkscreen.variable}`}
+      className={`scroll-smooth ${poppins.variable} ${inconsolata.variable} ${outfit.variable} ${alumniSansCollegiateOne.variable} ${silkscreen.variable}`}
     >
       <body>
         {children}

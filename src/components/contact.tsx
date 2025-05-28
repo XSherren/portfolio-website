@@ -28,7 +28,10 @@ const LinkedInIcon = () => (
 
 function Contact() {
   return (
-    <section className="flex min-h-screen flex-col items-center justify-center py-12 md:py-20">
+    <section
+      id="contact"
+      className="flex min-h-screen flex-col items-center justify-center py-12 md:py-20"
+    >
       <div className="container mx-auto px-8">
         <div className="mb-10 text-center md:mb-16">
           <h1 className="mb-3 text-4xl font-bold text-white md:text-5xl">
@@ -39,7 +42,7 @@ function Contact() {
           </p>
         </div>
 
-        <div className="flex flex-col items-start gap-10 md:gap-16 lg:flex-row">
+        <div className="flex flex-col gap-10 md:flex-row md:gap-16">
           {/* Contact Form */}
           <form className="w-full space-y-8 text-center md:order-2 md:space-y-6 md:text-left lg:w-1/2">
             <div>
@@ -69,7 +72,7 @@ function Contact() {
                 placeholder="Your message"
               ></textarea>
             </div>
-            <div className="text-center">
+            <div className="text-right">
               <button
                 type="submit"
                 className="inline-flex w-full items-center justify-center rounded-full border bg-linear-to-br from-[#E7DAFF] to-[#B494EF] px-8 py-3 text-base font-semibold text-[#2C1746] shadow-sm transition-colors hover:border hover:bg-linear-to-br hover:from-[#CFB5FF] hover:to-[#655BD6] focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-purple-900 focus:outline-none md:w-auto"
@@ -111,7 +114,7 @@ function Contact() {
                   href="https://github.com/XSherren"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-purple-300 hover:text-white"
+                  className="text-white hover:text-[#B9B5E4]"
                   aria-label="GitHub"
                 >
                   <GitHubIcon />
@@ -120,7 +123,7 @@ function Contact() {
                   href="https://www.linkedin.com/in/sherren-lau/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-purple-300 hover:text-white"
+                  className="text-white hover:text-[#B9B5E4]"
                   aria-label="LinkedIn"
                 >
                   <LinkedInIcon />
