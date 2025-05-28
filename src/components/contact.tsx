@@ -29,7 +29,7 @@ const LinkedInIcon = () => (
 function Contact() {
   return (
     <section className="flex min-h-screen flex-col items-center justify-center py-12 md:py-20">
-      <div className="container mx-auto w-full px-4">
+      <div className="container mx-auto px-8">
         <div className="mb-10 text-center md:mb-16">
           <h1 className="mb-3 text-4xl font-bold text-white md:text-5xl">
             Contact Me
@@ -39,9 +39,9 @@ function Contact() {
           </p>
         </div>
 
-        <div className="flex flex-col items-start gap-10 md:grid md:grid-cols-2 md:gap-16">
+        <div className="flex flex-col items-start gap-10 md:gap-16 lg:flex-row">
           {/* Contact Form */}
-          <form className="w-full space-y-8 text-center md:order-2 md:space-y-6 md:text-left">
+          <form className="w-full space-y-8 text-center md:order-2 md:space-y-6 md:text-left lg:w-1/2">
             <div>
               <input
                 type="text"
@@ -81,7 +81,7 @@ function Contact() {
           </form>
 
           {/* Contact Details */}
-          <div className="mx-auto mt-10 space-y-8 text-center md:order-1 md:mt-0 md:text-left lg:mx-0">
+          <div className="mx-auto mt-10 space-y-8 text-center md:order-1 md:mt-0 md:text-left lg:mx-0 lg:w-1/2 lg:pl-26">
             {/* Email */}
             <div>
               <h3 className="mb-1 text-sm font-semibold text-purple-300 uppercase">
