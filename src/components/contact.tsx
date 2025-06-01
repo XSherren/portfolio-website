@@ -1,4 +1,4 @@
-import { PaperAirplaneIcon } from "@heroicons/react/24/outline";
+import { FaRegPaperPlane } from "react-icons/fa";
 
 const GitHubIcon = () => (
   <svg
@@ -17,7 +17,7 @@ const GitHubIcon = () => (
 
 const LinkedInIcon = () => (
   <svg
-    className="h-8 w-8"
+    className="h-6.5 w-6.5"
     fill="currentColor"
     viewBox="0 0 24 24"
     aria-hidden="true"
@@ -38,7 +38,8 @@ function Contact() {
             Contact Me
           </h1>
           <p className="text-lg text-purple-200 md:text-xl">
-            Let&apos;s connect! I&apos;d love to hear from you.
+            Happy to connect about new opportunities or anything else.
+            Let&apos;s talk!
           </p>
         </div>
 
@@ -78,7 +79,7 @@ function Contact() {
                 className="inline-flex w-full items-center justify-center rounded-full border bg-linear-to-br from-[#E7DAFF] to-[#B494EF] px-8 py-3 text-base font-semibold text-[#2C1746] shadow-sm transition-colors hover:border hover:bg-linear-to-br hover:from-[#CFB5FF] hover:to-[#655BD6] focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-purple-900 focus:outline-none md:w-auto"
               >
                 Send Message
-                <PaperAirplaneIcon className="-mr-1 ml-3 h-5 w-5 rotate-45 transform" />
+                <FaRegPaperPlane className="-mr-1 ml-1 h-4 w-4 transform" />
               </button>
             </div>
           </form>
@@ -109,7 +110,7 @@ function Contact() {
               <h3 className="mb-2 text-sm font-semibold text-purple-300 uppercase">
                 Follow
               </h3>
-              <div className="flex justify-center space-x-4 md:justify-start">
+              <div className="flex items-center justify-center space-x-3 md:justify-start">
                 <a
                   href="https://github.com/XSherren"
                   target="_blank"
