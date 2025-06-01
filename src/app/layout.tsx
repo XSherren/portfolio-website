@@ -5,6 +5,7 @@ import {
   Outfit,
   Alumni_Sans_Collegiate_One,
   Silkscreen,
+  Oleo_Script,
 } from "next/font/google";
 import "./globals.css";
 import { Footer } from "@/components/footer";
@@ -39,6 +40,12 @@ const silkscreen = Silkscreen({
   weight: ["400"],
 });
 
+const oleoScript = Oleo_Script({
+  variable: "--font-oleoscript",
+  subsets: ["latin"],
+  weight: ["400"],
+});
+
 export const metadata: Metadata = {
   title: "Sherren's Portfolio",
   description: "Sherren's Portfolio created by next js",
@@ -52,7 +59,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`scroll-smooth ${poppins.variable} ${inconsolata.variable} ${outfit.variable} ${alumniSansCollegiateOne.variable} ${silkscreen.variable}`}
+      className={`scroll-smooth ${poppins.variable} ${inconsolata.variable} ${outfit.variable} ${alumniSansCollegiateOne.variable} ${silkscreen.variable} ${oleoScript.variable}`}
     >
       <body>
         {children}

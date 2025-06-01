@@ -50,6 +50,10 @@ body {
   .font-silkscreen {
     font-family: var(--font-silkscreen);
   }
+
+  .font-oleoscript {
+    font-family: var(--font-oleoscript);
+  }
 }
 
 /* In your global CSS file (e.g., app/globals.css) */

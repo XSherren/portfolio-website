@@ -36,8 +36,10 @@ interface ProjectData {
   title: string;
   description: string;
   technologies: string[];
+  imageSrc?: string;
   githubLink?: string;
   liveLink?: string;
+  imageClassName?: string;
 }
 
 const ALL_PROJECTS_DATA: ProjectData[] = [
@@ -47,8 +49,10 @@ const ALL_PROJECTS_DATA: ProjectData[] = [
     description:
       "An e-leave system simplifies and automates the leave application and approval process online.",
     technologies: ["C#", ".NET"],
+    imageSrc: "/eleavedashboard.png",
     // githubLink: "#",
     // liveLink: "#",
+    imageClassName: "w-[210px]",
   },
   {
     id: "proj-2",
@@ -56,8 +60,10 @@ const ALL_PROJECTS_DATA: ProjectData[] = [
     description:
       "A professional website for an electronics manufacturing company.",
     technologies: ["WordPress", "Figma"],
+    imageSrc: "/glendale.png",
     // githubLink: "#",
-    liveLink: "#",
+    liveLink: "https://glendale.com.sg",
+    imageClassName: "w-[250px]",
   },
   {
     id: "proj-3",
@@ -65,8 +71,10 @@ const ALL_PROJECTS_DATA: ProjectData[] = [
     description:
       "This site to showcase my projects and capabilities in web development.",
     technologies: ["Next.js", "Tailwind CSS", "TypeScript"],
-    githubLink: "#",
-    liveLink: "#",
+    imageSrc: "/portfolio.png",
+    githubLink: "https://github.com/XSherren/portfolio-website",
+    liveLink: "https://xsherren.com",
+    imageClassName: "w-[250px]",
   },
   {
     id: "proj-4",
@@ -74,16 +82,20 @@ const ALL_PROJECTS_DATA: ProjectData[] = [
     description:
       "I'm working on this program to take the headache out of buying tickets.",
     technologies: ["Python", "Automation"],
+    imageSrc: "",
     // githubLink: "#",
     // liveLink: "#",
+    imageClassName: "",
   },
   {
     id: "proj-5",
     title: "Cost Management App",
     description: "In progress...",
-    technologies: ["Mobile", "Finance"],
+    technologies: ["Finance"],
+    imageSrc: "",
     // githubLink: "#",
     // liveLink: "#",
+    imageClassName: "",
   },
 ];
 
@@ -324,11 +336,13 @@ function Projects() {
                     title={articleData.title}
                     description={articleData.description}
                     technologies={articleData.technologies}
+                    imageSrc={articleData.imageSrc}
                     githubLink={articleData.githubLink}
                     liveLink={articleData.liveLink}
                     // Pass icon components if defined within Article or pass them as props
                     githubIcon={<GithubIcon />}
                     linkIcon={<ExternalLinkIcon />}
+                    imageClassName={articleData.imageClassName}
                   />
                 </div>
               ))}
