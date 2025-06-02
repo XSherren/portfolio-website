@@ -1,3 +1,4 @@
+"use client";
 import { FaRegPaperPlane } from "react-icons/fa";
 
 const GitHubIcon = () => (
@@ -26,6 +27,64 @@ const LinkedInIcon = () => (
   </svg>
 );
 
+type ContactFormProps = {
+  name: string;
+  email: string;
+  message: string;
+};
+
+type ContactFormResponse = {
+  message: string;
+};
+
+const writeLog = (functionName: string, message: string) => {
+  console.log(`[${new Date().toISOString()}] ${functionName}: ${message}`);
+};
+
+const callAPI = async (
+  contactForm: ContactFormProps,
+): Promise<ContactFormResponse> => {
+  writeLog("callAPI", "Sending contact form data to API");
+
+  const response = await fetch("https://api.xsherren.com/contact", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(contactForm),
+  });
+
+  if (response.status === 200) {
+    const data: ContactFormResponse = await response.json();
+    writeLog("callAPI", "Contact form data sent successfully");
+    return data;
+  } else {
+    writeLog("callAPI", "Failed to send contact form data");
+    return {
+      message: "Failed to send message. Please try again later.",
+    };
+  }
+};
+
+const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+  event.preventDefault();
+  writeLog("handleSubmit", "Submitting contact form");
+
+  const form = event.currentTarget;
+  const formData = new FormData(form);
+  const data: ContactFormProps = {
+    name: formData.get("yourName") as string,
+    email: formData.get("email_form") as string,
+    message: formData.get("yourMessage") as string,
+  };
+
+  const response: ContactFormResponse = await callAPI(data);
+
+  alert(response.message);
+
+  form.reset();
+};
+
 function Contact() {
   return (
     <section
@@ -45,7 +104,10 @@ function Contact() {
 
         <div className="flex flex-col gap-10 md:flex-row md:gap-16">
           {/* Contact Form */}
-          <form className="w-full space-y-8 text-center md:order-2 md:space-y-6 md:text-left lg:w-1/2">
+          <form
+            className="w-full space-y-8 text-center md:order-2 md:space-y-6 md:text-left lg:w-1/2"
+            onSubmit={handleSubmit}
+          >
             <div>
               <input
                 type="text"
@@ -76,7 +138,7 @@ function Contact() {
             <div className="text-right">
               <button
                 type="submit"
-                className="inline-flex w-full items-center justify-center rounded-full border bg-linear-to-br from-[#E7DAFF] to-[#B494EF] px-8 py-3 text-base font-semibold text-[#2C1746] shadow-sm transition-colors hover:border hover:bg-linear-to-br hover:from-[#CFB5FF] hover:to-[#655BD6] focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-purple-900 focus:outline-none md:w-auto"
+                className="inline-flex w-full cursor-pointer items-center justify-center rounded-full border bg-linear-to-br from-[#E7DAFF] to-[#B494EF] px-8 py-3 text-base font-semibold text-[#2C1746] shadow-sm transition-colors hover:border hover:bg-linear-to-br hover:from-[#CFB5FF] hover:to-[#655BD6] focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-purple-900 focus:outline-none md:w-auto"
               >
                 Send Message
                 <FaRegPaperPlane className="-mr-1 ml-1 h-4 w-4 transform" />
