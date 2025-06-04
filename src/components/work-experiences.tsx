@@ -44,10 +44,10 @@ const WorkExperiences = ({ experiences }: WorkExperiencesProps) => {
                 Open To Work
               </span>
             </div>
-            <h2 className="mb-4 text-4xl font-bold lg:mb-8 lg:text-5xl">
+            <h2 className="mb-4 text-4xl font-bold sm:text-5xl lg:mb-8 xl:text-6xl">
               Work Experiences
             </h2>
-            <p className="text-lg text-slate-300">
+            <p className="text-slate-300 lg:text-lg">
               Detailing my career journey and the practical experience I&apos;ve
               gained, showcasing my contributions and growth in various
               professional environments.

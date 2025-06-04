@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import { FaRegPaperPlane } from "react-icons/fa";
 
 const GitHubIcon = () => (
@@ -66,26 +67,31 @@ const callAPI = async (
   }
 };
 
-const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-  event.preventDefault();
-  writeLog("handleSubmit", "Submitting contact form");
+function Contact() {
+  const [isLoading, setIsLoading] = useState(false);
 
-  const form = event.currentTarget;
-  const formData = new FormData(form);
-  const data: ContactFormProps = {
-    name: formData.get("yourName") as string,
-    email: formData.get("email_form") as string,
-    message: formData.get("yourMessage") as string,
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    writeLog("submitForm", "Processing form submission");
+    event.preventDefault();
+    setIsLoading(true);
+
+    await new Promise((resolve) => setTimeout(resolve, 2000)); // Simulate loading delay
+    setIsLoading(false);
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    const data: ContactFormProps = {
+      name: formData.get("yourName") as string,
+      email: formData.get("email_form") as string,
+      message: formData.get("yourMessage") as string,
+    };
+
+    const response: ContactFormResponse = await callAPI(data);
+
+    alert(response.message);
+
+    form.reset();
   };
 
-  const response: ContactFormResponse = await callAPI(data);
-
-  alert(response.message);
-
-  form.reset();
-};
-
-function Contact() {
   return (
     <section
       id="contact"
@@ -93,10 +99,10 @@ function Contact() {
     >
       <div className="container mx-auto px-8">
         <div className="mb-10 text-center md:mb-16">
-          <h1 className="mb-3 text-4xl font-bold text-white md:text-5xl">
+          <h1 className="mb-3 text-4xl font-bold text-white sm:text-5xl xl:text-6xl">
             Contact Me
           </h1>
-          <p className="text-lg text-purple-200 md:text-xl">
+          <p className="text-lg text-slate-300 lg:text-lg">
             Happy to connect about new opportunities or anything else.
             Let&apos;s talk!
           </p>
@@ -113,8 +119,9 @@ function Contact() {
                 type="text"
                 name="yourName"
                 id="yourName"
-                className="mt-1 block w-full border-0 border-b-2 border-[#E2CBFF]/30 bg-transparent px-1 py-2 text-white placeholder-[#D8D2E7] focus:border-purple-200 focus:ring-0 focus:outline-none sm:text-sm"
+                className="mt-1 block w-full border-0 border-b-2 border-[#E2CBFF]/30 bg-transparent px-1 py-2 text-white placeholder-[#D8D2E7] transition duration-300 focus:border-purple-200 focus:ring-0 focus:outline-none sm:text-sm"
                 placeholder="Your name"
+                required
               />
             </div>
             <div>
@@ -122,8 +129,9 @@ function Contact() {
                 type="email"
                 name="email_form"
                 id="email_form"
-                className="mt-1 block w-full border-0 border-b-2 border-[#E2CBFF]/30 bg-transparent px-1 py-2 text-white placeholder-[#D8D2E7] focus:border-purple-200 focus:ring-0 focus:outline-none sm:text-sm"
+                className="mt-1 block w-full border-0 border-b-2 border-[#E2CBFF]/30 bg-transparent px-1 py-2 text-white placeholder-[#D8D2E7] transition duration-300 focus:border-purple-200 focus:ring-0 focus:outline-none sm:text-sm"
                 placeholder="E-mail"
+                required
               />
             </div>
             <div>
@@ -131,16 +139,18 @@ function Contact() {
                 id="yourMessage"
                 name="yourMessage"
                 rows={4}
-                className="mt-1 block w-full border-0 border-b-2 border-[#E2CBFF]/30 bg-transparent px-1 py-2 text-white placeholder-[#D8D2E7] focus:border-purple-200 focus:ring-0 focus:outline-none sm:text-sm"
+                className="mt-1 block w-full border-0 border-b-2 border-[#E2CBFF]/30 bg-transparent px-1 py-2 text-white placeholder-[#D8D2E7] transition duration-300 focus:border-purple-200 focus:ring-0 focus:outline-none sm:text-sm"
                 placeholder="Your message"
+                required
               ></textarea>
             </div>
             <div className="text-right">
               <button
                 type="submit"
-                className="inline-flex w-full cursor-pointer items-center justify-center rounded-full border bg-linear-to-br from-[#E7DAFF] to-[#B494EF] px-8 py-3 text-base font-semibold text-[#2C1746] shadow-sm transition-colors hover:border hover:bg-linear-to-br hover:from-[#CFB5FF] hover:to-[#655BD6] focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-purple-900 focus:outline-none md:w-auto"
+                className="inline-flex w-full cursor-pointer items-center justify-center rounded-full border bg-linear-to-br from-[#E7DAFF] to-[#B494EF] px-8 py-3 text-base font-semibold text-[#2C1746] shadow-sm transition transition-colors duration-300 hover:border hover:bg-linear-to-br hover:from-[#CFB5FF] hover:to-[#655BD6] focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-purple-900 focus:outline-none md:w-auto"
+                disabled={isLoading}
               >
-                Send Message
+                {isLoading ? "Loading..." : "Send Message"}
                 <FaRegPaperPlane className="-mr-1 ml-1 h-4 w-4 transform" />
               </button>
             </div>
@@ -150,26 +160,26 @@ function Contact() {
           <div className="mx-auto mt-10 space-y-8 text-center md:order-1 md:mt-0 md:text-left lg:mx-0 lg:w-1/2 lg:pl-26">
             {/* Email */}
             <div>
-              <h3 className="mb-1 text-sm font-semibold text-purple-300 uppercase">
+              <h3 className="mb-1 text-sm font-semibold text-indigo-200 uppercase">
                 Email
               </h3>
               <a
                 href="mailto:sherren.sg00@gmail.com"
-                className="group text-lg text-white transition-colors hover:text-purple-300"
+                className="group text-lg text-white transition-colors duration-300 hover:text-purple-300"
               >
                 sherren.sg00@gmail.com
               </a>
             </div>
             {/* Phone */}
             <div>
-              <h3 className="mb-1 text-sm font-semibold text-purple-300 uppercase">
+              <h3 className="mb-1 text-sm font-semibold text-indigo-200 uppercase">
                 Phone
               </h3>
               <p className="text-lg text-white">(65) 8902 9865</p>
             </div>
             {/* Follow Social */}
             <div>
-              <h3 className="mb-2 text-sm font-semibold text-purple-300 uppercase">
+              <h3 className="mb-2 text-sm font-semibold text-indigo-200 uppercase">
                 Follow
               </h3>
               <div className="flex items-center justify-center space-x-3 md:justify-start">
@@ -177,7 +187,7 @@ function Contact() {
                   href="https://github.com/XSherren"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white hover:text-[#B9B5E4]"
+                  className="text-white transition duration-300 hover:text-[#B9B5E4]"
                   aria-label="GitHub"
                 >
                   <GitHubIcon />
@@ -186,7 +196,7 @@ function Contact() {
                   href="https://www.linkedin.com/in/sherren-lau/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white hover:text-[#B9B5E4]"
+                  className="text-white transition duration-300 hover:text-[#B9B5E4]"
                   aria-label="LinkedIn"
                 >
                   <LinkedInIcon />

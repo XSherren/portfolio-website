@@ -12,21 +12,24 @@ function Navbar() {
             <li>
               <a
                 href="#about"
-                className="block px-3 py-2 text-white md:p-0"
+                className="block px-3 py-2 text-white duration-300 hover:text-indigo-200 md:p-0"
                 aria-current="page"
               >
                 ABOUT
               </a>
             </li>
             <li>
-              <a href="#projects" className="block px-3 py-2 text-white md:p-0">
+              <a
+                href="#projects"
+                className="block px-3 py-2 text-white duration-300 hover:text-indigo-200 md:p-0"
+              >
                 PROJECTS
               </a>
             </li>
             <li>
               <a
                 href="#experiences"
-                className="block px-3 py-2 text-white md:p-0"
+                className="block px-3 py-2 text-white duration-300 hover:text-indigo-200 md:p-0"
               >
                 EXPERIENCES
               </a>
@@ -34,7 +37,7 @@ function Navbar() {
             <li>
               <a
                 href="#contact"
-                className="block rounded-sm px-3 py-2 text-white md:p-0"
+                className="block rounded-sm px-3 py-2 text-white duration-300 hover:text-indigo-200 md:p-0"
               >
                 CONTACT
               </a>

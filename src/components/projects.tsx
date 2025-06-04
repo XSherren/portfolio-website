@@ -279,10 +279,12 @@ function Projects() {
 
   return (
     <main id="projects" className="overflow-hidden py-12 text-white md:py-20">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-8 md:px-10 lg:px-12">
         <div className="mb-10 text-center md:mb-16">
-          <h2 className="text-4xl font-bold sm:text-5xl">Projects</h2>
-          <p className="mt-3 text-lg text-slate-300">
+          <h2 className="mb-2 text-4xl font-bold sm:text-5xl md:mb-6 xl:text-6xl">
+            Projects
+          </h2>
+          <p className="mt-3 text-slate-300 lg:text-lg">
             A collection of my work, from completed applications to current
             explorations.
           </p>
@@ -295,7 +297,7 @@ function Projects() {
             {!disableControls && (
               <button
                 type="button"
-                className="absolute top-1/2 -left-8 z-30 flex -translate-y-1/2 transform items-center justify-center rounded-full text-[#D9D9D9]/50 hover:text-[#D9D9D9]/70 md:-left-10 lg:-left-12"
+                className="absolute top-1/2 -left-8 z-30 flex -translate-y-1/2 transform items-center justify-center rounded-full text-[#D9D9D9]/50 transition duration-300 hover:text-[#D9D9D9]/70 md:-left-10 lg:-left-12"
                 onClick={() => handleScroll("left")}
                 aria-label="Previous set of projects"
               >
@@ -330,7 +332,7 @@ function Projects() {
               {displayedArticles.map((articleData) => (
                 <div
                   key={articleData.uniqueRenderKey}
-                  className="w-full flex-shrink-0 snap-center px-2 sm:w-1/2 md:w-1/3" // Defines how many cards are visible
+                  className="w-full flex-shrink-0 snap-center px-5 md:w-1/2 md:snap-start md:px-2 xl:w-1/3" // Defines how many cards are visible
                 >
                   <Article
                     title={articleData.title}
@@ -352,7 +354,7 @@ function Projects() {
             {!disableControls && (
               <button
                 type="button"
-                className="absolute top-1/2 -right-8 z-30 flex -translate-y-1/2 transform items-center justify-center text-[#D9D9D9]/50 hover:text-[#D9D9D9]/70 md:-right-10 lg:-right-12"
+                className="absolute top-1/2 -right-8 z-30 flex -translate-y-1/2 transform items-center justify-center text-[#D9D9D9]/50 transition duration-300 hover:text-[#D9D9D9]/70 md:-right-10 lg:-right-12"
                 onClick={() => handleScroll("right")}
                 aria-label="Next set of projects"
               >

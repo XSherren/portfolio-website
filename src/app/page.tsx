@@ -14,10 +14,10 @@ export default function Home() {
       dateRange: "Jul, 2024 - Present",
       responsibilities: [
         "Led the revamp of company's website, handling website redesigns, migrations and security implementation.",
-        "Managing and maintaining the company's website.",
-        "Assist sales team in processing sales orders, purchase orders and delivery orders.",
+        "Handled ongoing basic updates and maintenance of company website.",
+        "Delivered monthly printing usage reports using Power BI, supporting HOD in resource planning.",
+        "Supported sales team by preparing quotations, creating sales orders, and coordinating with internal teams to process orders smoothly.",
         "Coordinate delivery arrangements with customers.",
-        "Use Power BI to generate and distribute monthly printing usage report to each HOD.",
       ],
     },
     {
@@ -36,9 +36,12 @@ export default function Home() {
       company: "Glendale Electronic Components Pte Ltd",
       dateRange: "Jun, 2022 - Dec, 2023",
       responsibilities: [
-        "Assist sales team in processing sales orders, purchase orders and delivery orders.",
-        "Coordinate delivery arrangements with customers.",
-        "Use Power BI to generate and distribute monthly printing usage report to each HOD.",
+        "Supported sales team by preparing quotations, creating sales orders, and coordinating with internal teams to process orders smoothly.",
+        "Monitoring customer orders tracking by ERP system.",
+        "Communicated with customers to confirm delivery times and arrange shipments.",
+        "Issued DO and invoices once goods are ready for delivery.",
+        "Handled invoice submissions through email and client's portal.",
+        "Assisted purchasing team with PR buying",
       ],
     },
     {
