@@ -165,7 +165,7 @@ function Contact() {
               </h3>
               <a
                 href="mailto:sherren.sg00@gmail.com"
-                className="group text-lg text-white transition-colors duration-300 hover:text-purple-300"
+                className="group text-lg text-white transition-colors duration-300 hover:text-indigo-200"
               >
                 sherren.sg00@gmail.com
               </a>
